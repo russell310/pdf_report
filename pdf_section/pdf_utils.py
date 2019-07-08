@@ -217,6 +217,9 @@ class PdfPrint:
             name="ParagraphTitle", fontSize=11, alignment=TA_JUSTIFY, fontName="exoBold"))
         styles.add(ParagraphStyle(
             name="Justify", alignment=TA_JUSTIFY, fontName="rajdhani"))
+        styles.add(ParagraphStyle(
+            name="TitleFont", fontSize=16, alignment=TA_CENTER, fontName="exoBold"))
+
         # list used for elements added into document
         data = []
 
@@ -231,7 +234,7 @@ class PdfPrint:
         data.append(hd_table)
         # insert a blank space
         data.append(Spacer(1, 12))
-        data.append(Paragraph(title, styles['Title']))
+        data.append(Paragraph(title, styles['TitleFont']))
         # insert a blank space
         data.append(Spacer(1, 12))
 
